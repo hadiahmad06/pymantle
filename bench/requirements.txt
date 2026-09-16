@@ -1,3 +1,7 @@
-torch>=2.1
-torchvision
-spikingjelly
+# torch and cupy are installed separately (see README "Install" section) --
+# both need machine-specific flags (a CUDA wheel tag for torch, a source
+# build against the already-installed CUDA toolkit for cupy) that don't
+# belong in a plain requirements.txt line. spikingjelly is also installed
+# separately, with --no-deps, so it doesn't drag in its own torchvision.
+numpy
+tqdm

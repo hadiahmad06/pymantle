@@ -4,7 +4,7 @@ single-step Python looping. This is thesis-1's existing competitor: a
 version of "fuse the time loop" that already ships. Workstream A needs to
 know exactly where it plateaus.
 
-Requires: pip install spikingjelly
+Requires: pip install --no-deps spikingjelly (see README "Install" section for why --no-deps)
 """
 
 import torch
