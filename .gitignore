@@ -11,3 +11,9 @@
 .env
 .claude/settings.local.json
 # pipeline:end
+
+bench/data/
+bench/profiles/
+bench/results/
+bench/__pycache__/
+*.pyc
