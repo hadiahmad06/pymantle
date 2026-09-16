@@ -169,3 +169,19 @@ before any code lands here.**
 
 Realistically multi-year to usability for a small team. Plan accordingly; don't let anything
 get announced early.
+
+<!-- pipeline:start -->
+## Pipeline
+
+This repo is wired into the personal dev pipeline (Slack/Linear/GitHub, service-agnostic scaffold).
+
+- Allowed remote: hadiahmad06/pymantle
+- Feature branches: `feature/<slug>` — create with a worktree, not a plain checkout:
+  `git worktree add .pipeline/worktrees/<slug> -b feature/<slug>`
+- Every commit you make must be prefixed `[claude]`
+- Ticket context: `rg <id> .pipeline/tickets/`. If missing, fetch it first:
+  `.pipeline/adapters/linear/fetch.sh <id> > .pipeline/tickets/<id>.md`
+- Prior critical context humans flagged for you: `rg "CRITICAL" .pipeline/slack.md`
+- Open PRs with `gh pr create`. Never merge unless explicitly asked.
+- Never push directly to main/master — a hook enforces this, but don't attempt it.
+<!-- pipeline:end -->
